@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import routes from './routes'
+import {connect} from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+    showContentMenu = (routes) => {
+        let result = null;
+        if (!routes) {
+            return result;
+        } else {
+            result = routes.map((item, index) => {
+                return  <Route
+                            key={index}
+                            path={item.path}
+                            exact={item.exact}
+                            component={item.main}
+                        />
+            });
+            return result;
+        }
+    };
+
+    render() {
+        return (
+            <div className="container-fluid">
+                <Router>
+                    {/* Menu */}
+
+                    {/*<Home />*/}
+                    {/* Content */}
+
+                    {/* switch for handle case dirrect change on client URL*/}
+                    <Switch>
+                        {this.showContentMenu(routes)}
+                    </Switch>
+                </Router>
+            </div>
+        );
+    }
 }
 
-export default App;
+
+const mapStateToProps = state => {
+    return {
+        display: state.display
+    }
+};
+
+
+export default connect(mapStateToProps, null)(App);

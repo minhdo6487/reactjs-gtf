@@ -1,7 +1,7 @@
 /*body {*/
 /*  margin-top: 105px; }*/
 
-.try_mt {
+.top_mt {
     margin-top: 105px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .btn-circle {
-    width: 126px;
+    width: 85%;
     height: 35px;
     padding: 6px 0px;
     border-radius: 10px;

@@ -40,6 +40,7 @@ class Contact extends Component {
                 </div>
 
                 <iframe
+                    title="map_gg"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6587947593957!2d106.67855421425634!3d10.760757962426542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c5cc1cd69%3A0x706abd5742678bb5!2zMjkwIEFuIETGsMahbmcgVsawxqFuZywgUGjGsOG7nW5nIDMsIFF14bqtbiA1LCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1549852788463"
                     width="100%" height="350" allowFullScreen="">
                 </iframe>

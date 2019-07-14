@@ -9,7 +9,7 @@ class LandingPage extends Component {
         let {compo} = this.props;
         return (
             <div>
-                <div className="try_mt">
+                <div className="top_mt">
                     <nav className="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
                         <div className="container">
                             <a href="/" className="navbar-brand">

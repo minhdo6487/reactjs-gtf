@@ -59,7 +59,8 @@ class Login extends Component {
                             </div>
 
                             <form onSubmit={this.onSubmit}>
-                                <div className="input-group input-group-sm mb-3">
+                                <div className="mb-3 d-flex align-items-center">
+                                    <div className="icon-text"><i className="fa fa-user fa-2x"/></div>
                                     <TextField
                                         id="standard-name"
                                         name="username"
@@ -70,7 +71,8 @@ class Login extends Component {
                                         margin="normal"
                                     />
                                 </div>
-                                <div className="input-group input-group-sm mb-3">
+                                <div className="mb-3 d-flex align-items-center">
+                                    <div className="icon-text"><i className="fa fa-lock fa-2x"/></div>
                                     <TextField
                                         id="password"
                                         label="password"

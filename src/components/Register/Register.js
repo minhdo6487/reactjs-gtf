@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import styles from './styles'
 import './../../style.css'
 import Fab from '@material-ui/core/Fab';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 
 class Regisger extends Component {
@@ -62,7 +63,12 @@ class Regisger extends Component {
                                 </h5>
                             </div>
 
-                            <form onSubmit={this.onSubmit}>
+                            {/*<Form onSubmit={this.onSubmit}>*/}
+                            <ValidatorForm
+                                ref="form"
+                                onSubmit={this.onSubmit}
+                                onError={errors => console.log(errors)}
+                            >
                                 <div className="mb-3 d-flex align-items-center">
                                     <div className="icon-text"><i className="fa fa-user-tie fa-2x"/></div>
                                     <TextField
@@ -77,40 +83,44 @@ class Regisger extends Component {
                                 </div>
                                 <div className="mb-3 d-flex align-items-center">
                                     <div className="icon-text"><i className="fa fa-user fa-2x"/></div>
-                                    <TextField
+                                    <TextValidator
                                         id="standard-name"
-                                        name="username"
                                         label="Username"
-                                        className={classes.textField}
-                                        value={this.state.username}
                                         onChange={this.onHandleChange}
+                                        name="username"
+                                        validators={['required']}
+                                        errorMessages={['this field is required']}
                                         margin="normal"
+                                        value={this.state.username}
+                                        className={classes.textField}
                                     />
                                 </div>
                                 <div className="mb-3 d-flex align-items-center">
                                     <div className="icon-text"><i className="fa fa-lock fa-2x"/></div>
-                                    <TextField
-                                        id="password"
+                                    <TextValidator
                                         label="Password"
-                                        className={classes.textField}
-                                        value={this.state.password}
                                         onChange={this.onHandleChange}
-                                        margin="normal"
-                                        type="password"
                                         name="password"
+                                        type="password"
+                                        validators={['required']}
+                                        errorMessages={['this field is required']}
+                                        value={this.state.password}
+                                        className={classes.textField}
                                     />
+
                                 </div>
                                 <div className="mb-3 d-flex align-items-center">
                                     <div className="icon-text"><i className="fa fa-user-lock fa-2x"/></div>
-                                    <TextField
+                                    <TextValidator
                                         id="confirm_password"
                                         label="Confirm Password"
-                                        className={classes.textField}
-                                        value={this.state.confirm_password}
                                         onChange={this.onHandleChange}
-                                        margin="normal"
-                                        type="password"
                                         name="confirm_password"
+                                        type="password"
+                                        validators={['required']}
+                                        errorMessages={['this field is required']}
+                                        value={this.state.confirm_password}
+                                        className={classes.textField}
                                     />
                                 </div>
                                 <div className="row">
@@ -131,7 +141,8 @@ class Regisger extends Component {
                                         <a href="/login"> Login</a>
                                     </div>
                                 </div>
-                            </form>
+                            {/*</Form>*/}
+                            </ValidatorForm>
                         </div>
                     </div>
                 </div>
